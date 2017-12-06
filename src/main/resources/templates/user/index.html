@@ -9,13 +9,12 @@
 
     <table class="table">
 
-
         <tr>
             <th>User</th>
         </tr>
 
         <tr th:each="user : ${users}">
-            <td><a th:href= "@{'/user/' + ${user.userId}}" th:text = "${user.username}">Edit</a></td>
+            <td><a th:href= "@{'/user/' + ${user.userId}}" th:text = "${user.email}">Edit</a></td>
             <td th:text = "${user.userId}"></td>
         </tr>
 

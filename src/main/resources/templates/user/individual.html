@@ -6,9 +6,8 @@
 
 <table class="table">
 
-
     <tr>
-        <th>User</th>
+        <th>Username</th>
         <th>Email</th>
         <th>Date Joined</th>
     </tr>
@@ -16,6 +15,7 @@
     <tr th:object="${user}">
         <td th:text="*{username}"></td>
         <td th:text="*{email}"></td>
+        <td th:text="*{password}"></td>
         <td th:text = "*{date}"></td>
     </tr>
 

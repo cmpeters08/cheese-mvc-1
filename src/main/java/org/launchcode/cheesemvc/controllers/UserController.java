@@ -30,13 +30,13 @@ public class UserController {
     @RequestMapping(value = "add", method = RequestMethod.GET)
     public String displayAddForm(Model model){
         model.addAttribute(new User());
-        model.addAttribute("title", "Signup");
+        model.addAttribute("title", "Sign up");
         return "user/add";
     }
 
     @RequestMapping(value = "add", method = RequestMethod.POST)
     public String processUser(@RequestParam String verify, Model model,
-                              @ModelAttribute @Valid User newUser,
+                              @Valid User newUser,
                               Errors errors){
 
         if (!verify.equals(newUser.getPassword())){
@@ -52,7 +52,7 @@ public class UserController {
 
         UserData.add(newUser);
 
-        return "redirect:/user";
+        return "redirect:/";
     }
 
     @RequestMapping(value = "/{userId}", method = RequestMethod.GET)
