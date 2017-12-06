@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body class="container body-content">
+<h1 th:text="${title}">User</h1>
+
+<table class="table">
+
+
+    <tr>
+        <th>User</th>
+        <th>Email</th>
+        <th>Date Joined</th>
+    </tr>
+
+    <tr th:object="${user}">
+        <td th:text="*{username}"></td>
+        <td th:text="*{email}"></td>
+        <td th:text = "*{date}"></td>
+    </tr>
+
+</table>
+
+</body>
+</html>

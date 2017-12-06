@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body class = "container">
+<h1 th:text="${title}"></h1>
+
+<div>
+    <p th:unless="${users} and ${users.size()}">no users:(</p>
+
+    <table class="table">
+
+
+        <tr>
+            <th>User</th>
+        </tr>
+
+        <tr th:each="user : ${users}">
+            <td><a th:href= "@{'/user/' + ${user.userId}}" th:text = "${user.username}">Edit</a></td>
+            <td th:text = "${user.userId}"></td>
+        </tr>
+
+    </table>
+</div>
+
+
+</body>
+</html>
